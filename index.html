@@ -12,14 +12,63 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Hello World</h1>
+      <h1>Brew Scout</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <!-- Sign Up Form -->
+    <section class="authforms">
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+
+          <label>Email</label>
+          <input type="text" name="[credentials][email]" placeholder="Email Address">
+
+          <label>Password</label>
+          <input type="password" name="[credentials][password]" placeholder="Password">
+
+          <label>Confirm Password</label>
+          <input type="password" name="[credentials][password_confirmation]" placeholder="Confirm Password">
+
+          <input type="submit" class="button" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+<!-- Sign In Form -->
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in!</legend>
+
+          <label>Email</label>
+          <input type="text" name="[credentials][email]" placeholder="Email Address">
+
+          <label>Password</label>
+          <input type="password" name="[credentials][password]" placeholder="Password">
+
+          <input class="button" type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+<!-- Change Password Form -->
+      <button id="changepwbutton">Change Password</button>
+
+      <form id="change-password">
+        <fieldset>
+          <legend>Change your password!</legend>
+
+          <label>Old password</label>
+          <input type="password" name="[passwords][old]" placeholder="Old password">
+
+          <label>New password</label>
+          <input type="password" name="[passwords][new]" placeholder="New password">
+
+          <input class="button" type="submit" name="submit" value="Change password!">
+        </fieldset>
+      </form>
+
+      <button class="signout-button">Sign Out</button>
+      <button class="startgame">Start Game</button>
+    </section>
+    <p class="errormsg"></p>
+    <p class="changepwmsg">Password changed.</p>
     </body>
 </html>
