@@ -1,2 +1,58 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #4e4e4e;
+$font-color: #73AD21;
+$white: #fff;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+}
+header {
+  color: #73AD21;
+}
+.authforms {
+  clear: both;
+}
+.errormsg {
+  clear: both;
+}
+#change-password {
+  display: none;
+}
+.signout-button {
+  display: none;
+}
+#changepwbutton {
+  display: none;
+}
+form {
+  margin-bottom: 20px;
+}
+legend {
+  background-color: $background-color;
+  color: $font-color;
+}
+.button {
+  background-color: $font-color;
+  color: $background-color;
+}
+#changepwbutton {
+  background-color: $font-color;
+  color: $background-color;
+}
+#changepwbutton {
+  background-color: $font-color;
+  color: $background-color;
+}
+.signout-button {
+  background-color: $font-color;
+  color: $background-color;
+}
+input, select, textarea {
+    color: black;
+}
+.changepwmsg {
+  display: none;
+}
