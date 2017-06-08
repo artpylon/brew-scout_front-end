@@ -84,11 +84,37 @@ const beerIndex = function (data) {
   })
 }
 
+const updateBeer = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/beers/' + store.beer.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    },
+    data: '{}'
+  })
+  .then((response) => {
+  })
+}
+
+const deleteBeer = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/beers/' + store.beer.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   addBeer,
-  beerIndex
+  beerIndex,
+  updateBeer,
+  deleteBeer
 }

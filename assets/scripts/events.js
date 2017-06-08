@@ -55,6 +55,13 @@ const onAddBeer = function (event) {
     .then(ui.addBeerSuccess)
     .catch(ui.addBeerFailure)
 }
+const onUpdateBeer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateBeer(data)
+    .then(ui.updateBeerSuccess)
+    .catch(ui.updateBeerFailure)
+}
 
 const addHandlers = () => {
   // Authentication
@@ -64,6 +71,7 @@ const addHandlers = () => {
   $('.signout-button').on('click', onSignOut)
   $('#changepwbutton').on('click', showChangePassword)
   $('#addBeer').on('submit', onAddBeer)
+  $('#updateBeer').on('submit', onUpdateBeer)
 }
 
 module.exports = {

@@ -71,6 +71,11 @@ const addBeerSuccess = (data) => {
 const addBeerFailure = (error) => {
 }
 
+const updateBeerSuccess = (data) => {
+}
+const updateBeerFailure = (error) => {
+}
+
 module.exports = {
   // Authentication
   signUpSuccess,
@@ -81,8 +86,11 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
+  // Beer
   beerIndexSuccess,
   beerIndexFailure,
   addBeerSuccess,
-  addBeerFailure
+  addBeerFailure,
+  updateBeerSuccess,
+  updateBeerFailure
 }
