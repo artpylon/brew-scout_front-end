@@ -9,6 +9,9 @@ const ui = require('./ui')
 const signUpSuccess = (data) => {
   $('#sign-up').hide()
   $('.errormsg').hide()
+  api.beerIndex()
+  .then(beerIndexSuccess)
+  .catch(beerIndexFailure)
 }
 const signUpFailure = (error) => {
   $('.errormsg').hide()
@@ -57,6 +60,17 @@ const signOutFailure = (error) => {
   $('.errormsg').show()
 }
 
+// Beer
+const beerIndexSuccess = (data) => {
+}
+const beerIndexFailure = (error) => {
+}
+
+const addBeerSuccess = (data) => {
+}
+const addBeerFailure = (error) => {
+}
+
 module.exports = {
   // Authentication
   signUpSuccess,
@@ -66,5 +80,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  beerIndexSuccess,
+  beerIndexFailure,
+  addBeerSuccess,
+  addBeerFailure
 }

@@ -52,8 +52,8 @@ const onAddBeer = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.addBeer(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(ui.addBeerSuccess)
+    .catch(ui.addBeerFailure)
 }
 
 const addHandlers = () => {

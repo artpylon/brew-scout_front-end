@@ -68,10 +68,27 @@ const addBeer = function (data) {
   })
 }
 
+const beerIndex = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/beers',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  })
+  .then((response) => {
+    // store.gamesPlayed = response.games.length
+    // $('.played').text(response.games.length)
+    // store.games = response.games
+    // // $('.played').text(store.games.length)
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  addBeer
+  addBeer,
+  beerIndex
 }
