@@ -47,6 +47,15 @@ const showChangePassword = function (event) {
   $('#changepwbutton').hide()
 }
 
+// Beer
+const onAddBeer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.addBeer(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
+}
+
 const addHandlers = () => {
   // Authentication
   $('#sign-up').on('submit', onSignUp)
@@ -54,6 +63,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('.signout-button').on('click', onSignOut)
   $('#changepwbutton').on('click', showChangePassword)
+  $('#addBeer').on('submit', onAddBeer)
 }
 
 module.exports = {

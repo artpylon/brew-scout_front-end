@@ -1,0 +1,32 @@
+<!-- {{#each books as |book|}}
+
+  {{> partial}}
+  Don't uncomment yet
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <!-- <h1 data-id="{{book.id}}"> <small>Title: {{book.title}}</small></h1>
+  <div>
+    {{#if book.description}}
+      {{book.description}}
+    {{else}}
+      No description.
+    {{/if}}
+  </div>
+
+{{/each}} --> -->
+
+{{#each books as |book|}}
+<ul class="listbook" data-id="{{book.id}}">
+  <li> <small>Title: {{book.title}}</small>
+    {{#if book.description}}
+      <li>{{book.description}}</li>
+    {{else}}
+      No description.
+    {{/if}}
+  </li>
+  <li>
+    <button class="remove" data-id="{{book.id}}">Remove</button>
+  </li>
+</ul>
+  <button class="remove" data-id="{{book.id}}">Remove</button>
+{{/each}}
