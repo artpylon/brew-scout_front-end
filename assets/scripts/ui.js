@@ -24,6 +24,7 @@ const signInSuccess = (data) => {
   $('.signout-button').show()
   $('#changepwbutton').show()
   $('.yourBeers').show()
+  $('#addBeer').show()
   api.beerIndex()
   .then(beerIndexSuccess)
   .catch(beerIndexFailure)
@@ -56,6 +57,7 @@ const signOutSuccess = (data) => {
   $('#sign-up').show()
   $('#sign-in').show()
   $('.yourBeers').hide()
+  $('#addBeer').hide()
 }
 const signOutFailure = (error) => {
   $('.errormsg').hide()
@@ -66,6 +68,7 @@ const signOutFailure = (error) => {
 // Beer
 const showBeersTemplate = require('./templates/beer_listing.handlebars')
 const beerFormTemplate = require('./templates/update_beer_form.handlebars')
+const beerDeleteTemplate = require('./templates/beer_delete.handlebars')
 
 const onUpdateBeer = function (event) {
   event.preventDefault()
@@ -95,19 +98,38 @@ const openBeerForm = function (event) {
   // $('#deleteBeer').on('submit', onUpdateBeer)
 }
 
+const onDeleteBeer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteBeer(data)
+    .then(deleteBeerSuccess)
+    .catch(deleteBeerFailure)
+}
+
+const confirmBeerDelete = function (event) {
+  let confirmBeerDeleteHtml = beerDeleteTemplate()
+  $(event.target).after(confirmBeerDeleteHtml)
+  store.beerId = $(event.target).closest('button').attr('data-id')
+  console.log('this is store.beerId after it is stored', store.beerId)
+  $('.deleteBeer').hide()
+  $('#deleteBeer').on('click', onDeleteBeer)
+}
+
 const beerIndexSuccess = (response) => {
   let showBeersHtml = showBeersTemplate({ beers: response.beers })
   $('.beerList').append(showBeersHtml)
   $('.openBeerUpdate').on('click', openBeerForm)
-  $('.deleteBeer').on('click', api.deleteBeer)
+  $('.deleteBeer').on('click', confirmBeerDelete)
 }
 
 const beerIndexFailure = (error) => {
 }
 
 const addBeerSuccess = (data) => {
-  // need confirmation that beer has been added
-  // need to new beer to appear in beer list, don't make ajax call, append locally
+  $('.beerList').empty()
+  api.beerIndex()
+  .then(beerIndexSuccess)
+  .catch(beerIndexFailure)
 }
 const addBeerFailure = (error) => {
   // need error message.
@@ -115,7 +137,14 @@ const addBeerFailure = (error) => {
 
 const deleteBeerSuccess = (data) => {
   // need confirmation beer has been deleted
+  $('#updateBeer').hide()
+  $('.confirmBeerDelete').hide()
+  $('.beerList').empty()
+  api.beerIndex()
+  .then(beerIndexSuccess)
+  .catch(beerIndexFailure)
 }
+
 const deleteBeerFailure = (error) => {
 }
 

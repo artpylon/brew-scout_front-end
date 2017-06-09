@@ -87,14 +87,13 @@ const updateBeer = function (data) {
   // })
 }
 
-const deleteBeer = function (data) {
+const deleteBeer = function () {
   return $.ajax({
-    url: config.apiOrigin + '/beers/' + store.beer.id,
+    url: config.apiOrigin + '/beers/' + store.beerId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.userToken
-    },
-    data
+    }
     // is any data needed here?
   })
 }
