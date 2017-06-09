@@ -60,6 +60,7 @@ const signOutSuccess = (data) => {
   $('.yourBeers').hide()
   $('#addBeer').hide()
   $('.beerListTitle').hide()
+  $('.beerList').empty()
 }
 const signOutFailure = (error) => {
   $('.errormsg').hide()
@@ -94,10 +95,10 @@ const updateBeerFailure = (error) => {
 
 const openBeerForm = function (event) {
   let updateBeerFormHtml = beerFormTemplate()
+  $('.openBeerUpdate').hide()
   $(event.target).after(updateBeerFormHtml)
   store.beerId = $(event.target).closest('button').attr('data-id')
   $('#updateBeer').on('submit', onUpdateBeer)
-  // $('#deleteBeer').on('submit', onUpdateBeer)
 }
 
 const onDeleteBeer = function (event) {
