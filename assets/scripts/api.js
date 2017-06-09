@@ -53,27 +53,16 @@ const signOut = function (data) {
 
 // Beer
 const addBeer = function (data) {
-  store.newBeer = data
-  console.log('store.newBeer is', store.newBeer)
   console.log('data is', data)
+  console.log('store.id is ', store.id)
   return $.ajax({
     url: config.apiOrigin + '/beers',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.userToken
     },
-    data: {
-      'beer': {
-        'name': store.newBeer.beer.name,
-        'brand': store.newBeer.beer.brand,
-        'style': store.newBeer.beer.style,
-        'alc': store.newBeer.beer.alc,
-        'price': store.newBeer.beer.price,
-        'user_id': store.id}
-    }
+    data
   })
-  // .then((response) => {
-  // })
 }
 
 const beerIndex = function (data) {

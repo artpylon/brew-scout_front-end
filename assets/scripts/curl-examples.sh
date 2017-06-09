@@ -47,15 +47,14 @@ curl "http://localhost:4741/beers" \
 --include \
 --request POST \
 --header "Content-Type: application/json" \
---header "Authorization: Token token=BAhJIiUxNzJmYTU4OWEwZGIyNThiM2M3MDE1OTcwZjE3Yzg4OAY6BkVG--ed06ca1f235bcaf68e0afb0b8a3a370f1e79c499" \
+--header "Authorization: Token token=BAhJIiUyZmFkMGM1MzQ2MDFkZjkyMTlhYzk0YTBlOGE2NjVjNgY6BkVG--c3bf6580cef7f79a561e4cbb63546c103cd1f861" \
 --data '{
   "beer": {
   "name": "Zima",
   "brand": "Zima",
   "style": "sucks",
   "alc": 2,
-  "price": 2,
-  "user_id": 6
+  "price": 2
   }
 }'
 
