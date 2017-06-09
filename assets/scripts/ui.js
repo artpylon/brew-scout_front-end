@@ -63,8 +63,19 @@ const signOutFailure = (error) => {
 }
 
 // Beer
+const showBeersTemplate = require('./templates/beer-listing.handlebars')
+
 const beerIndexSuccess = (data) => {
+  console.log(data)
+  let showBeersHtml = showBeersTemplate({ beers: data.beers })
+  $('.content').append(showBeersHtml)
+  $('.removebtn').on('click', function () {
+    if (window.confirm('Do you really want to delete this beer?')) {
+      $(this).parent().parent().hide()
+    }
+  })
 }
+
 const beerIndexFailure = (error) => {
 }
 
