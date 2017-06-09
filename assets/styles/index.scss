@@ -58,3 +58,24 @@ input, select, textarea {
 .yourBeers {
   display: none;
 }
+.beerItem {
+  font-size: 14px;
+}
+.openBeerUpdate {
+  border: none;
+  color: white;
+  padding: 9px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+.deleteBeer {
+  border: none;
+  color: white;
+  padding: 9px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}

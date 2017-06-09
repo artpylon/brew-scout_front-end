@@ -1,35 +1,30 @@
 
 {{#each beers as |beer|}}
-<h3> <small>{{beer.name}}</h3>
-<ul class="listbeer" data-id="{{beer.id}}">
-  <li>
-    {{#if beer.brand}}
-      <li>Brand: {{beer.brand}}</li>
-    {{else}}
-      No brand.
-    {{/if}}
-  </li>
-  <li>
-    {{#if beer.style}}
-      <li>Style: {{beer.style}}</li>
-    {{else}}
-      No style.
-    {{/if}}
-  </li>
-  <li>
-    {{#if beer.alc}}
-      <li>Alc Content: {{beer.alc}}</li>
-    {{else}}
-      Alc content unknown.
-    {{/if}}
-  </li>
-  <li>
-    {{#if beer.price}}
-      <li>Price: {{beer.price}}</li>
-    {{else}}
-      Price unknown.
-    {{/if}}
-  </li>
+<h3>{{beer.name}}</h3>
+<ul class="beerItem" data-id="{{beer.id}}">
+  {{#if beer.brand}}
+    <li>Brand: {{beer.brand}}</li>
+  {{else}}
+    <li>No brand available</li>
+  {{/if}}
+
+  {{#if beer.style}}
+    <li>Style: {{beer.style}}</li>
+  {{else}}
+    <li>No style available.</li>
+  {{/if}}
+
+  {{#if beer.alc}}
+    <li>Alc Content: {{beer.alc}}</li>
+  {{else}}
+    <li>No alc content available.</li>
+  {{/if}}
+
+  {{#if beer.price}}
+    <li>Price: {{beer.price}}</li>
+  {{else}}
+    <li>No price available.</li>
+  {{/if}}
 </ul>
   <button class="openBeerUpdate" data-id="{{beer.id}}">Update</button>
   <button class="deleteBeer" data-id="{{beer.id}}">Delete</button>

@@ -73,9 +73,10 @@ const beerIndex = function (data) {
       Authorization: 'Token token=' + store.userToken
     }
   })
-  .then((response) => {
-    response.beers = store.beers
-  })
+  // .then((response) => {
+  //   store.beers = response
+  //   console.log('store.beers after beer index is ', store.beers)
+  // })
 }
 
 const updateBeer = function () {
