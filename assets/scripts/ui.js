@@ -3,6 +3,7 @@ const api = require('./api')
 const events = require('./events')
 const store = require('./store')
 const ui = require('./ui')
+const getFormFields = require(`../../lib/get-form-fields`)
 
 // Authentication
 
@@ -66,22 +67,39 @@ const signOutFailure = (error) => {
 const showBeersTemplate = require('./templates/beer_listing.handlebars')
 const beerFormTemplate = require('./templates/update_beer_form.handlebars')
 
+const onUpdateBeer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateBeer(data)
+    .then(updateBeerSuccess)
+    .catch(updateBeerFailure)
+}
+
+const updateBeerSuccess = (data) => {
+  console.log('im in updateBeerSuccess')
+  $('#updateBeer').hide()
+  $('.beerList').empty()
+  api.beerIndex()
+  .then(beerIndexSuccess)
+  .catch(beerIndexFailure)
+}
+
+const updateBeerFailure = (error) => {
+}
+
 const openBeerForm = function (event) {
   let updateBeerFormHtml = beerFormTemplate()
-  $(event.target).append(updateBeerFormHtml)
+  $(event.target).after(updateBeerFormHtml)
+  store.beerId = $(event.target).closest('button').attr('data-id')
+  $('#updateBeer').on('submit', onUpdateBeer)
+  // $('#deleteBeer').on('submit', onUpdateBeer)
 }
 
 const beerIndexSuccess = (response) => {
-  console.log('data is ', response)
-  console.log('data.beers is ', response.beers)
   let showBeersHtml = showBeersTemplate({ beers: response.beers })
   $('.beerList').append(showBeersHtml)
   $('.openBeerUpdate').on('click', openBeerForm)
-  // $('.removebtn').on('click', function () {
-  //   if (window.confirm('Do you really want to delete this beer?')) {
-  //     $(this).parent().parent().hide()
-  //   }
-  // })
+  $('.deleteBeer').on('click', api.deleteBeer)
 }
 
 const beerIndexFailure = (error) => {
@@ -93,12 +111,6 @@ const addBeerSuccess = (data) => {
 }
 const addBeerFailure = (error) => {
   // need error message.
-}
-
-const updateBeerSuccess = (data) => {
-  // need confirmation beer has been updated, append locally
-}
-const updateBeerFailure = (error) => {
 }
 
 const deleteBeerSuccess = (data) => {

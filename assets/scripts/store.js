@@ -6,7 +6,11 @@ const store = {
 const newBeer = {
 }
 
+const beerId = {
+}
+
 module.exports = {
   store,
-  newBeer
+  newBeer,
+  beerId
 }

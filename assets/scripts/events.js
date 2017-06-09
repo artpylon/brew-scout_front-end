@@ -55,13 +55,7 @@ const onAddBeer = function (event) {
     .then(ui.addBeerSuccess)
     .catch(ui.addBeerFailure)
 }
-const onUpdateBeer = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.updateBeer(data)
-    .then(ui.updateBeerSuccess)
-    .catch(ui.updateBeerFailure)
-}
+
 const onDeleteBeer = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -78,9 +72,6 @@ const addHandlers = () => {
   $('.signout-button').on('click', onSignOut)
   $('#changepwbutton').on('click', showChangePassword)
   $('#addBeer').on('submit', onAddBeer)
-  // Need click handler to open beer update form.
-  // $('.openBeerUpdate').on('submit', onUpdateBeer)
-  $('.updateBeer').on('submit', onUpdateBeer)
   $('.deleteBeer').on('submit', onDeleteBeer)
 }
 

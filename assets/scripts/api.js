@@ -53,8 +53,6 @@ const signOut = function (data) {
 
 // Beer
 const addBeer = function (data) {
-  console.log('data is', data)
-  console.log('store.id is ', store.id)
   return $.ajax({
     url: config.apiOrigin + '/beers',
     method: 'POST',
@@ -73,25 +71,20 @@ const beerIndex = function (data) {
       Authorization: 'Token token=' + store.userToken
     }
   })
-  // .then((response) => {
-  //   store.beers = response
-  //   console.log('store.beers after beer index is ', store.beers)
-  // })
 }
 
-const updateBeer = function () {
+const updateBeer = function (data) {
+  console.log('updateBeer store.beerId is ', store.beerId)
   return $.ajax({
-    url: config.apiOrigin + '/beers/' + store.beer.id,
+    url: config.apiOrigin + '/beers/' + store.beerId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.userToken
     },
-    // need to get user input and add it to json here
-    data: '{}'
+    data
   })
-  .then((response) => {
-    // does anything in the response need to be stored?
-  })
+  // .then((response) => {
+  // })
 }
 
 const deleteBeer = function (data) {
