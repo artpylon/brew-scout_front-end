@@ -67,16 +67,21 @@ const beerIndexFailure = (error) => {
 }
 
 const addBeerSuccess = (data) => {
+  // need confirmation that beer has been added
+  // need to new beer to appear in beer list, don't make ajax call, append locally
 }
 const addBeerFailure = (error) => {
+  // need error message.
 }
 
 const updateBeerSuccess = (data) => {
+  // need confirmation beer has been updated, append locally
 }
 const updateBeerFailure = (error) => {
 }
 
 const deleteBeerSuccess = (data) => {
+  // need confirmation beer has been deleted
 }
 const deleteBeerFailure = (error) => {
 }

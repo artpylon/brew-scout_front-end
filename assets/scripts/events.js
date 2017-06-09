@@ -71,8 +71,10 @@ const addHandlers = () => {
   $('.signout-button').on('click', onSignOut)
   $('#changepwbutton').on('click', showChangePassword)
   $('#addBeer').on('submit', onAddBeer)
-  // update beer click handler
-  // delete beer click handler
+  // Need click handler to open beer update form.
+  // $('.openBeerUpdate').on('submit', onUpdateBeer)
+  $('.updateBeer').on('submit', onUpdateBeer)
+  $('.deleteBeer').on('submit', onDeleteBeer)
 }
 
 module.exports = {

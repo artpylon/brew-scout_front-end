@@ -59,12 +59,11 @@ const addBeer = function (data) {
     headers: {
       Authorization: 'Token token=' + store.userToken
     },
+    // need to get user input and add it to json here
     data: '{}'
   })
   .then((response) => {
-    // store.game = response.game
-    // store.player_o = response.player_o
-    // store.over = response.over
+    // does anything in the response need to be stored?
   })
 }
 
@@ -77,10 +76,7 @@ const beerIndex = function (data) {
     }
   })
   .then((response) => {
-    // store.gamesPlayed = response.games.length
-    // $('.played').text(response.games.length)
-    // store.games = response.games
-    // // $('.played').text(store.games.length)
+    // does anything in the response need to be stored?
   })
 }
 
@@ -91,9 +87,11 @@ const updateBeer = function () {
     headers: {
       Authorization: 'Token token=' + store.userToken
     },
+    // need to get user input and add it to json here
     data: '{}'
   })
   .then((response) => {
+    // does anything in the response need to be stored?
   })
 }
 
@@ -105,6 +103,7 @@ const deleteBeer = function (data) {
       Authorization: 'Token token=' + store.userToken
     },
     data
+    // is any data needed here?
   })
 }
 
