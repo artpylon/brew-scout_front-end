@@ -62,6 +62,13 @@ const onUpdateBeer = function (event) {
     .then(ui.updateBeerSuccess)
     .catch(ui.updateBeerFailure)
 }
+const onDeleteBeer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.onDeleteBeer(data)
+    .then(ui.deleteBeerSuccess)
+    .catch(ui.deleteBeerFailure)
+}
 
 const addHandlers = () => {
   // Authentication
