@@ -9,9 +9,6 @@ const ui = require('./ui')
 const signUpSuccess = (data) => {
   $('#sign-up').hide()
   $('.errormsg').hide()
-  api.beerIndex()
-  .then(beerIndexSuccess)
-  .catch(beerIndexFailure)
 }
 const signUpFailure = (error) => {
   $('.errormsg').hide()
@@ -25,7 +22,9 @@ const signInSuccess = (data) => {
   $('.errormsg').hide()
   $('.signout-button').show()
   $('#changepwbutton').show()
-  $('.yourBeers').show()
+  api.beerIndex()
+  .then(beerIndexSuccess)
+  .catch(beerIndexFailure)
 }
 
 const signInFailure = (error) => {
@@ -63,17 +62,18 @@ const signOutFailure = (error) => {
 }
 
 // Beer
-const showBeersTemplate = require('./templates/beer-listing.handlebars')
+// const showBeersTemplate = require('../templates/beer-listing.handlebars')
 
 const beerIndexSuccess = (data) => {
-  console.log(data)
-  let showBeersHtml = showBeersTemplate({ beers: data.beers })
-  $('.content').append(showBeersHtml)
-  $('.removebtn').on('click', function () {
-    if (window.confirm('Do you really want to delete this beer?')) {
-      $(this).parent().parent().hide()
-    }
-  })
+  // console.log(data)
+  // $('.yourBeers').show()
+  // let showBeersHtml = showBeersTemplate({ beers: data.beers })
+  // $('.content').append(showBeersHtml)
+  // $('.removebtn').on('click', function () {
+  //   if (window.confirm('Do you really want to delete this beer?')) {
+  //     $(this).parent().parent().hide()
+  //   }
+  // })
 }
 
 const beerIndexFailure = (error) => {
