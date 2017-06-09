@@ -25,6 +25,7 @@ const signInSuccess = (data) => {
   $('#changepwbutton').show()
   $('.yourBeers').show()
   $('#addBeer').show()
+  $('.beerListTitle').show()
   api.beerIndex()
   .then(beerIndexSuccess)
   .catch(beerIndexFailure)
@@ -58,6 +59,7 @@ const signOutSuccess = (data) => {
   $('#sign-in').show()
   $('.yourBeers').hide()
   $('#addBeer').hide()
+  $('.beerListTitle').hide()
 }
 const signOutFailure = (error) => {
   $('.errormsg').hide()

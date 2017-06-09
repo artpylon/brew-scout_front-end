@@ -17,6 +17,15 @@ body {
 .errormsg {
   clear: both;
 }
+button {
+  border: none;
+  color: white;
+  padding: 9px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
 #change-password {
   display: none;
 }
@@ -33,22 +42,22 @@ legend {
   background-color: $background-color;
   color: $font-color;
 }
-.button {
-  background-color: $font-color;
-  color: $background-color;
-}
-#changepwbutton {
-  background-color: $font-color;
-  color: $background-color;
-}
-#changepwbutton {
-  background-color: $font-color;
-  color: $background-color;
-}
-.signout-button {
-  background-color: $font-color;
-  color: $background-color;
-}
+// .button {
+//   background-color: $font-color;
+//   color: $background-color;
+// }
+// #changepwbutton {
+//   background-color: $font-color;
+//   color: $background-color;
+// }
+// #changepwbutton {
+//   background-color: $font-color;
+//   color: $background-color;
+// }
+// .signout-button {
+//   background-color: $font-color;
+//   color: $background-color;
+// }
 input, select, textarea {
     color: black;
 }
@@ -61,24 +70,36 @@ input, select, textarea {
 .beerItem {
   font-size: 14px;
 }
-.openBeerUpdate {
-  border: none;
-  color: white;
-  padding: 9px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-}
-.deleteBeer {
-  border: none;
-  color: white;
-  padding: 9px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-}
+// .openBeerUpdate {
+//   border: none;
+//   color: white;
+//   padding: 9px 16px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 14px;
+// }
+// .deleteBeer {
+//   border: none;
+//   color: white;
+//   padding: 9px 16px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 14px;
+// }
+// #deleteBeer {
+//   border: none;
+//   color: white;
+//   padding: 9px 16px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 14px;
+// }
 #addBeer {
+  display: none;
+}
+.beerListTitle {
   display: none;
 }
