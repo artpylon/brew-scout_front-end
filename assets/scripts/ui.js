@@ -64,12 +64,19 @@ const signOutFailure = (error) => {
 
 // Beer
 const showBeersTemplate = require('./templates/beer_listing.handlebars')
+const beerFormTemplate = require('./templates/update_beer_form.handlebars')
+
+const openBeerForm = function (event) {
+  let updateBeerFormHtml = beerFormTemplate()
+  $(event.target).append(updateBeerFormHtml)
+}
 
 const beerIndexSuccess = (response) => {
   console.log('data is ', response)
   console.log('data.beers is ', response.beers)
   let showBeersHtml = showBeersTemplate({ beers: response.beers })
   $('.beerList').append(showBeersHtml)
+  $('.openBeerUpdate').on('click', openBeerForm)
   // $('.removebtn').on('click', function () {
   //   if (window.confirm('Do you really want to delete this beer?')) {
   //     $(this).parent().parent().hide()
