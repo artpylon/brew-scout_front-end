@@ -25,6 +25,7 @@ const signInSuccess = (data) => {
   $('.errormsg').hide()
   $('.signout-button').show()
   $('#changepwbutton').show()
+  $('.yourBeers').show()
 }
 
 const signInFailure = (error) => {
@@ -53,6 +54,7 @@ const signOutSuccess = (data) => {
   $('.changepwmsg').hide()
   $('#sign-up').show()
   $('#sign-in').show()
+  $('.yourBeers').hide()
 }
 const signOutFailure = (error) => {
   $('.errormsg').hide()
