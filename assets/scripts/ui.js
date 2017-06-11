@@ -82,9 +82,13 @@ const onUpdateBeer = function (event) {
 }
 
 const updateBeerSuccess = (data) => {
-  console.log('im in updateBeerSuccess')
+  $('.errormsg').hide()
+  $('.changepwmsg').hide()
   $('#updateBeer').hide()
   $('.beerList').empty()
+  $('#updateBeer').each(function () {
+    this.reset()
+  })
   api.beerIndex()
   .then(beerIndexSuccess)
   .catch(beerIndexFailure)
@@ -113,7 +117,6 @@ const confirmBeerDelete = function (event) {
   let confirmBeerDeleteHtml = beerDeleteTemplate()
   $(event.target).after(confirmBeerDeleteHtml)
   store.beerId = $(event.target).closest('button').attr('data-id')
-  console.log('this is store.beerId after it is stored', store.beerId)
   $('.deleteBeer').hide()
   $('#deleteBeer').on('click', onDeleteBeer)
 }
@@ -129,7 +132,12 @@ const beerIndexFailure = (error) => {
 }
 
 const addBeerSuccess = (data) => {
+  $('.errormsg').hide()
+  $('.changepwmsg').hide()
   $('.beerList').empty()
+  $('#addBeer').each(function () {
+    this.reset()
+  })
   api.beerIndex()
   .then(beerIndexSuccess)
   .catch(beerIndexFailure)
@@ -139,7 +147,8 @@ const addBeerFailure = (error) => {
 }
 
 const deleteBeerSuccess = (data) => {
-  // need confirmation beer has been deleted
+  $('.errormsg').hide()
+  $('.changepwmsg').hide()
   $('#updateBeer').hide()
   $('.confirmBeerDelete').hide()
   $('.beerList').empty()

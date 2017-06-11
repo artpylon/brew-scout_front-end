@@ -74,7 +74,6 @@ const beerIndex = function (data) {
 }
 
 const updateBeer = function (data) {
-  console.log('updateBeer store.beerId is ', store.beerId)
   return $.ajax({
     url: config.apiOrigin + '/beers/' + store.beerId,
     method: 'PATCH',
