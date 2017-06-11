@@ -99,7 +99,7 @@ const updateBeerFailure = (error) => {
 
 const openBeerForm = function (event) {
   let updateBeerFormHtml = beerFormTemplate()
-  $('.openBeerUpdate').hide()
+  $(event.target).off()
   $(event.target).after(updateBeerFormHtml)
   store.beerId = $(event.target).closest('button').attr('data-id')
   $('#updateBeer').on('submit', onUpdateBeer)
