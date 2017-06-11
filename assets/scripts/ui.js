@@ -7,7 +7,7 @@ const getFormFields = require(`../../lib/get-form-fields`)
 
 // Authentication
 
-const signUpSuccess = (data) => {
+const signUpSuccess = () => {
   $('#sign-up').hide()
   $('.errormsg').hide()
 }

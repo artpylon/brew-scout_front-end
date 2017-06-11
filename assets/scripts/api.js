@@ -12,7 +12,6 @@ const signUp = function (data) {
   })
     .then((response) => {
       store.userToken = response.user.token
-      store.statusText = response.statusText
       store.id = response.id
     })
 }
