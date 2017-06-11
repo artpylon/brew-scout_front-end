@@ -115,6 +115,7 @@ const onDeleteBeer = function (event) {
 
 const confirmBeerDelete = function (event) {
   let confirmBeerDeleteHtml = beerDeleteTemplate()
+  $('#updateBeer').hide()
   $(event.target).after(confirmBeerDeleteHtml)
   store.beerId = $(event.target).closest('button').attr('data-id')
   $('.deleteBeer').hide()

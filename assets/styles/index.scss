@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: rgb(0, 144, 172);
 $font-color: #fff;
 $white: #fff;
+$accent-color: rgb(233, 29, 99);
 // rgb(233, 29, 99) pink
 // rgb(0, 144, 172) blue
 
@@ -42,24 +43,8 @@ legend {
   background-color: $background-color;
   color: $font-color;
 }
-// .button {
-//   background-color: $font-color;
-//   color: $background-color;
-// }
-// #changepwbutton {
-//   background-color: $font-color;
-//   color: $background-color;
-// }
-// #changepwbutton {
-//   background-color: $font-color;
-//   color: $background-color;
-// }
-// .signout-button {
-//   background-color: $font-color;
-//   color: $background-color;
-// }
 input, select, textarea {
-    color: black;
+  color: black;
 }
 .changepwmsg {
   display: none;
@@ -70,36 +55,23 @@ input, select, textarea {
 .beerItem {
   font-size: 14px;
 }
-// .openBeerUpdate {
-//   border: none;
-//   color: white;
-//   padding: 9px 16px;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   font-size: 14px;
-// }
-// .deleteBeer {
-//   border: none;
-//   color: white;
-//   padding: 9px 16px;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   font-size: 14px;
-// }
-// #deleteBeer {
-//   border: none;
-//   color: white;
-//   padding: 9px 16px;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   font-size: 14px;
-// }
 #addBeer {
   display: none;
 }
 .beerListTitle {
   display: none;
+}
+#updateBeer {
+  background-color: $accent-color;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.updateBeerForm {
+  background-color: $accent-color;
+}
+.deleteBeer {
+  margin: 10px;
+}
+#deleteBeer {
+  margin: 10px;
 }
