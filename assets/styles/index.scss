@@ -24,12 +24,24 @@ body {
    margin-bottom: 0;
    border-radius: 0;
  }
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+}
+.navbar-brand {
+  font-size: 24px;
+  color: white;
+}
 h1 {
    color: white;
    font-size: 16px;
    padding-right: 20px;
  }
-
+.description {
+  text-align: center;
+}
  /* Add a gray background color and some padding to the footer */
  footer {
    background-color: $accent-color;
