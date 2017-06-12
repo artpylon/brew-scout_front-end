@@ -3,6 +3,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $background-color: rgb(0, 144, 172);
 $font-color: #fff;
+$error-font: red;
 $white: #fff;
 $accent-color: rgb(233, 29, 99);
 // rgb(233, 29, 99) pink
@@ -12,11 +13,158 @@ body {
   background-color: $background-color;
   color: $font-color;
 }
-.authforms {
-  clear: both;
+
+// NEW STUFF
+.navbar {
+   background-color: $accent-color;
+   margin-bottom: 0;
+   border-radius: 0;
+ }
+h1 {
+   color: white;
+   font-size: 16px;
+   padding-right: 20px;
+ }
+
+ /* Add a gray background color and some padding to the footer */
+ footer {
+   background-color: $accent-color;
+   padding: 25px;
+ }
+.carousel-inner img {
+   width: 100%; /* Set width to 100% */
+   margin: auto;
+   max-height: 240px;
+   min-height:150px;
 }
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+ .carousel-caption {
+   display: none;
+ }
+}
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+#create-account-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#create-account-dp .help-block{
+    font-size:12px
+}
+#create-account-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#create-account-dp .form-group {
+    margin-bottom: 10px;
+}
+// change-password
+// #change-password-dp {
+//   display: none;
+// }
+.change-password-dp-nav {
+  display: none;
+}
+#change-password-dp {
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+
+#change-password-dp .help-block{
+    font-size:12px
+}
+#change-password-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#change-password-dp .form-group {
+    margin-bottom: 10px;
+}
+#log-out {
+  display: none;
+  min-width: 100px;
+  padding: 14px 14px 0;
+  overflow: hidden;
+  background-color: $accent-color;
+}
+#log-out .help-block{
+    font-size:12px
+}
+#log-out .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#log-out .form-group {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+    #create-account-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #create-account-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+    #change-password-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #change-password-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+// OLD STUFF
+// .authforms {
+//   clear: both;
+// }
 .errormsg {
   clear: both;
+  color: red;
+}
+.successmsg {
+  clear: both;
+  color: green;
 }
 button {
   border: none;
@@ -27,15 +175,13 @@ button {
   display: inline-block;
   font-size: 14px;
 }
-#change-password {
-  display: none;
-}
-.signout-button {
-  display: none;
-}
-#changepwbutton {
-  display: none;
-}
+
+// .signout-button {
+//   display: none;
+// }
+// #changepwbutton {
+//   display: none;
+// }
 form {
   margin-bottom: 20px;
 }
@@ -48,6 +194,7 @@ input, select, textarea {
 }
 .changepwmsg {
   display: none;
+  color: green;
 }
 .yourBeers {
   display: none;

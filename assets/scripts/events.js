@@ -67,12 +67,14 @@ const onDeleteBeer = function (event) {
 
 const addHandlers = () => {
   // Authentication
-  $('#sign-up').on('submit', onSignUp)
+  $('#create-account').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('.signout-button').on('click', onSignOut)
   $('#changepwbutton').on('click', showChangePassword)
   $('#addBeer').on('submit', onAddBeer)
+  // $('.openCreateAccount').on('click', ui.openCreateAccountForm)
+  // $('.openLogin').on('click', ui.openLogin)
 }
 
 module.exports = {

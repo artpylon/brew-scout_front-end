@@ -1,4 +1,6 @@
 'use strict'
+
+// Requires
 const api = require('./api')
 const events = require('./events')
 const store = require('./store')
@@ -8,24 +10,41 @@ const getFormFields = require(`../../lib/get-form-fields`)
 // Authentication
 
 const signUpSuccess = () => {
-  $('#sign-up').hide()
   $('.errormsg').hide()
+  $('.successmsg').text('Account created. Please log in.')
 }
+
 const signUpFailure = (error) => {
   $('.errormsg').hide()
   $('.errormsg').text('Sign up failed. Please check your email and passwords.')
-  $('.errormsg').show()
+  $('.err-create').show()
 }
+// const openCreateAccountForm = () => {
+//   $('.loginForm').hide()
+//   $('.login-dp').html('Create Account')
+//   // $('#login-dp').trigger('click')
+//   // $('.login-dp').click(function () {
+//   //   $('#login-dp').simulate('click')
+//   // })
+//   $('.createAccountForm').show()
+// }
+//
+// const openLogin = () => {
+//   $('.create-account-dp').hide()
+//   $('.loginForm').show()
+// }
 
 const signInSuccess = (data) => {
-  $('#sign-up').hide()
-  $('#sign-in').hide()
   $('.errormsg').hide()
-  $('.signout-button').show()
-  $('#changepwbutton').show()
   $('.yourBeers').show()
   $('#addBeer').show()
   $('.beerListTitle').show()
+  // new
+  $('.create-account-dp').addClass('hidden')
+  $('.login-dp').addClass('hidden')
+  $('.change-password-dp-nav').show()
+  $('.log-out').show()
+  $('#myCarousel').addClass('hidden')
   api.beerIndex()
   .then(beerIndexSuccess)
   .catch(beerIndexFailure)
@@ -34,34 +53,41 @@ const signInSuccess = (data) => {
 const signInFailure = (error) => {
   $('.errormsg').hide()
   $('.errormsg').text('Sign in failed. Please check your email and password.')
-  $('.errormsg').show()
+  $('.err-log-in').show()
 }
 
 const changePasswordSuccess = (data) => {
   $('.errormsg').hide()
   $('.changepwmsg').show()
-  $('#change-password').hide()
   $('#changepwbutton').show()
 }
 const changePasswordFailure = (error) => {
   $('.errormsg').hide()
   $('.errormsg').text('Change password failed. Please check your passwords.')
-  $('.errormsg').show()
+  $('.err-changepw').show()
 }
 
 const signOutSuccess = (data) => {
-  $('.signout-button').hide()
-  $('#change-password').hide()
-  $('#changepwbutton').hide()
   $('.errormsg').hide()
   $('.changepwmsg').hide()
-  $('#sign-up').show()
-  $('#sign-in').show()
   $('.yourBeers').hide()
   $('#addBeer').hide()
   $('.beerListTitle').hide()
   $('.beerList').empty()
+
+  $('.change-password-dp-nav').addClass('hidden')
+  $('.log-out').addClass('hidden')
+  $('.create-account-dp').removeClass('hidden')
+  $('.login-dp').removeClass('hidden')
+  $('#myCarousel').removeClass('hidden')
+
+  // $('.change-password-dp-nav').hide()
+  // $('.log-out').hide()
+  // $('.create-account-dp').show()
+  // $('.login-dp').show()
+  // $('#myCarousel').show()
 }
+
 const signOutFailure = (error) => {
   $('.errormsg').hide()
   $('.errormsg').text('Sign out failed. Please contact the webmaster.')
