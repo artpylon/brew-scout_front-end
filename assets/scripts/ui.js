@@ -45,6 +45,7 @@ const signInSuccess = (data) => {
   $('.change-password-dp-nav').show()
   $('.log-out').show()
   $('#myCarousel').addClass('hidden')
+  $('.three-across').addClass('hidden')
   api.beerIndex()
   .then(beerIndexSuccess)
   .catch(beerIndexFailure)
@@ -80,12 +81,7 @@ const signOutSuccess = (data) => {
   $('.create-account-dp').removeClass('hidden')
   $('.login-dp').removeClass('hidden')
   $('#myCarousel').removeClass('hidden')
-
-  // $('.change-password-dp-nav').hide()
-  // $('.log-out').hide()
-  // $('.create-account-dp').show()
-  // $('.login-dp').show()
-  // $('#myCarousel').show()
+  $('.three-across').removeClass('hidden')
 }
 
 const signOutFailure = (error) => {
