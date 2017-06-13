@@ -14,15 +14,16 @@
     </head>
 <body class="container-fluid">
   <div class="fill">
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brew Scout</a>
+        </button> -->
+        <span class="navbar-brand" href="#">Brew Scout</span>
+
       </div>
       <!-- <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -36,7 +37,7 @@
     <ul class="nav navbar-nav navbar-right login-dp">
 
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle login-dp" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+      <a href="#" class="dropdown-toggle login-dp nav-item" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu login-dp">
 				<li class="loginForm">
 					 <div class="row">
@@ -68,7 +69,7 @@
   <ul class="nav navbar-nav navbar-right create-account-dp">
 
   <li class="dropdown">
-    <a href="#" class="dropdown-toggle create-account-dp" data-toggle="dropdown"><b>Create Account</b><span class="caret"></span> </a>
+    <a href="#" class="dropdown-toggle create-account-dp nav-item" data-toggle="dropdown"><b>Create Account</b><span class="caret"></span> </a>
     <ul id="create-account-dp" class="dropdown-menu create-account-dp">
       <li class="createAccountForm">
          <div class="row">
@@ -103,15 +104,21 @@
     </ul>
   </li>
 </ul>
+
 <!-- Log out -->
-<ul class="nav navbar-nav navbar-right log-out">
-<button id="log-out" class="log-out signout-button">Log Out</button>
-</ul>
+
+  <!-- <ul class="nav navbar-nav navbar-right hidden log-out signout-button">
+    <li id="log-out" class="log-out signout-button nav-item">Log Out</li>
+  </ul> -->
+  <ul class="nav navbar-nav navbar-right log-out signout-button">
+    <button id="log-out" class="log-out signout-button nav-item">Log Out</button>
+  </ul>
+
 <!-- Change Password Dropdown -->
     <ul class="nav navbar-nav navbar-right change-password-dp-nav">
 
     <li class="dropdown change-password-dp">
-      <a href="#" class="dropdown-toggle change-password-dp" data-toggle="dropdown"><b>Change Password</b> <span class="caret"></span></a>
+      <a href="#" class="dropdown-toggle change-password-dp nav-item" data-toggle="dropdown"><b>Change Password</b> <span class="caret"></span></a>
 			<ul id="change-password-dp" class="dropdown-menu change-password-dp">
 				<li class="changePasswordForm">
 					 <div class="row">
@@ -216,36 +223,53 @@
   </div><br>
 
   <!-- Add Beer Form -->
-  <form id="addBeer">
-    <fieldset>
-      <legend>Add a Beer</legend>
+  <form id="addBeer" class="form-inline">
 
+    <legend>Add a Beer</legend>
+
+    <div class="form-group">
       <label>Name</label>
-      <input type="text" name="[beer][name]" placeholder="Name" required="true">
+      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control">
+    </div>
 
+    <div class="form-group">
       <label>Brand</label>
-      <input type="text" name="[beer][brand]" placeholder="Brand">
+      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control">
+    </div>
 
+    <div class="form-group">
       <label>Style</label>
-      <input type="text" name="[beer][style]" placeholder="Style">
+      <input type="text" name="[beer][style]" placeholder="Style" class="form-control">
+    </div>
 
-      <label>Alc Content</label>
-      <input type="number" name="[beer][alc]" placeholder="Alc Content">
+    <div class="form-group">
+      <label>Alc</label>
+      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control">
+    </div>
 
+    <div class="form-group">
       <label>Price</label>
-      <input type="number" name="[beer][price]" placeholder="Price">
+      <input type="number" name="[beer][price]" placeholder="Price" class="form-control">
+    </div>
 
-      <input type="submit" class="button" name="submit" value="Add Beer">
-    </fieldset>
+    <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
+
   </form>
 
-  <!-- Beers List -->
-  <legend class="beerListTitle">Your Personal Beer List</legend>
-  <section class="beerList">
-  </section>
 
-  <footer class="container-fluid text-center">
-    <p>Brew Scout</p>
+  <!-- Beers List -->
+  <div>
+    <legend class="beerListTitle">Your Personal Beer List</legend>
+    <div>
+      <p class="beer-msg"></p>
+    </div>
+    <section class="beerList">
+    </section>
+  </div>
+
+
+  <footer class="container-fluid ">
+    <p>Brew Scout 2017 ©</p>
   </footer>
 
 

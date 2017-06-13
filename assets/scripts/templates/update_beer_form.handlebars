@@ -1,21 +1,29 @@
 <form id="updateBeer" data-id="{{beer.id}}">
-  <fieldset>
 
-    <label>Name</label>
-    <input type="text" name="[beer][name]" placeholder="Name">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" name="[beer][name]" placeholder="Name" class="form-control">
+  </div>
 
-    <label>Brand</label>
-    <input type="text" name="[beer][brand]" placeholder="Brand">
+  <div class="form-group">
+    <label>Brand:</label>
+    <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control">
+  </div>
 
-    <label>Style</label>
-    <input type="text" name="[beer][style]" placeholder="Style">
+  <div class="form-group">
+    <label>Style:</label>
+    <input type="text" name="[beer][style]" placeholder="Style" class="form-control">
+  </div>
 
-    <label>Alc Content</label>
-    <input type="number" name="[beer][alc]" placeholder="Alc Content">
+  <div class="form-group">
+    <label>Alc Content:</label>
+    <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control">
+  </div>
 
-    <label>Price</label>
-    <input type="number" name="[beer][price]" placeholder="Price">
+  <div class="form-group">
+    <label>Price:</label>
+    <input type="number" name="[beer][price]" placeholder="Price" class="form-control">
+  </div>
+  <input type="submit" class="button btn btn-default" name="submit" value="Update Beer">
 
-    <input type="submit" class="button" name="submit" value="Update Beer">
-  </fieldset>
 </form>

@@ -1,31 +1,31 @@
 
 {{#each beers as |beer|}}
-<h3>{{beer.name}}</h3>
+<h3 data-type="{{beer.name}}">{{beer.name}}</h3>
 <ul class="beerItem" data-id="{{beer.id}}">
   {{#if beer.brand}}
-    <li>Brand: {{beer.brand}}</li>
+    <li data-type="{{beer.brand}}">Brand: {{beer.brand}}</li>
   {{else}}
     <li>No brand available</li>
   {{/if}}
 
   {{#if beer.style}}
-    <li>Style: {{beer.style}}</li>
+    <li data-type="{{beer.style}}">Style: {{beer.style}}</li>
   {{else}}
     <li>No style available.</li>
   {{/if}}
 
   {{#if beer.alc}}
-    <li>Alc Content: {{beer.alc}}</li>
+    <li data-type="{{beer.alc}}">Alc Content: {{beer.alc}}</li>
   {{else}}
     <li>No alc content available.</li>
   {{/if}}
 
   {{#if beer.price}}
-    <li>Price: {{beer.price}}</li>
+    <li data-type="{{beer.price}}">Price: {{beer.price}}</li>
   {{else}}
     <li>No price available.</li>
   {{/if}}
 </ul>
-  <button class="deleteBeer button" data-id="{{beer.id}}">Delete</button>
-  <button class="openBeerUpdate button" data-id="{{beer.id}}">Update</button>
+  <button class="deleteBeer btn btn-default button" data-id="{{beer.id}}">Delete</button>
+  <button class="openBeerUpdate btn btn-default button" data-id="{{beer.id}}">Update</button>
 {{/each}}

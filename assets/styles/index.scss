@@ -16,65 +16,83 @@ body {
 
 // NEW STUFF
 .fill {
-  min-height: 100%;
   height: 100%;
+  min-height: 100%;
 }
+
 .navbar {
-   background-color: $accent-color;
-   margin-bottom: 0;
-   border-radius: 0;
+  background-color: $accent-color;
+  border-radius: 0;
+  margin-bottom: 0;
  }
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus {
-  background-color: transparent;
-  color: white;
-  font-size: 24px;
-}
+
+// .navbar-inverse .navbar-brand:hover,
+// .navbar-inverse .navbar-brand:focus {
+//   background-color: transparent;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+// }
+
 .navbar-brand {
+  color: white;
   font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-item {
   color: white;
 }
+
 h1 {
-   color: white;
-   font-size: 16px;
-   padding-right: 20px;
+  color: white;
+  font-size: 16px;
+  padding-right: 20px;
  }
+
 .description {
   text-align: center;
 }
- /* Add a gray background color and some padding to the footer */
- footer {
-   background-color: $accent-color;
-   padding: 25px;
+.number-entry {
+  max-width: 30px;
+}
+footer {
+  background-color: $accent-color;
+  clear: both;
+  padding: 25px;
  }
+
 .carousel-inner img {
-   width: 100%; /* Set width to 100% */
-   margin: auto;
-   max-height: 240px;
-   min-height:150px;
+  margin: auto;
+  max-height: 240px;
+  min-height: 150px;
+  width: 100%;
 }
 
-/* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
- .carousel-caption {
+  .carousel-caption {
    display: none;
  }
 }
+
 #login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+  min-width: 250px;
+  padding: 14px 14px 0;
+  overflow: hidden;
+  background-color: rgba(255,255,255,.8);
 }
+
 #login-dp .help-block{
-    font-size:12px
+  font-size: 12px
 }
+
 #login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
+  background-color:rgba(255,255,255,.8);
+  border-top:1px solid #ddd;
+  clear: both;
+  padding:14px;
 }
+
 #login-dp .form-group {
     margin-bottom: 10px;
 }
@@ -85,22 +103,22 @@ h1 {
     overflow:hidden;
     background-color:rgba(255,255,255,.8);
 }
+
 #create-account-dp .help-block{
     font-size:12px
 }
+
 #create-account-dp .bottom{
     background-color:rgba(255,255,255,.8);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
 }
+
 #create-account-dp .form-group {
     margin-bottom: 10px;
 }
-// change-password
-// #change-password-dp {
-//   display: none;
-// }
+
 .change-password-dp-nav {
   display: none;
 }
@@ -125,11 +143,17 @@ h1 {
 }
 #log-out {
   display: none;
+  border: none;
   min-width: 100px;
   padding: 14px 14px 0;
   overflow: hidden;
   background-color: $accent-color;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
 }
+
 #log-out .help-block{
     font-size:12px
 }
@@ -171,9 +195,7 @@ h1 {
 }
 
 // OLD STUFF
-// .authforms {
-//   clear: both;
-// }
+
 .errormsg {
   clear: both;
   color: red;
@@ -182,22 +204,7 @@ h1 {
   clear: both;
   color: green;
 }
-button {
-  border: none;
-  color: white;
-  padding: 9px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-}
 
-// .signout-button {
-//   display: none;
-// }
-// #changepwbutton {
-//   display: none;
-// }
 form {
   margin-bottom: 20px;
 }
@@ -224,11 +231,10 @@ input, select, textarea {
 .beerListTitle {
   display: none;
 }
-#updateBeer {
-  background-color: $accent-color;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
+// #updateBeer {
+//   margin-bottom: 20px;
+//   margin-top: 20px;
+// }
 .updateBeerForm {
   background-color: $accent-color;
 }
