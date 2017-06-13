@@ -3,25 +3,25 @@
 <h3 data-type="{{beer.name}}">{{beer.name}}</h3>
 <ul class="beerItem" data-id="{{beer.id}}">
   {{#if beer.brand}}
-    <li data-type="{{beer.brand}}">Brand: {{beer.brand}}</li>
+    <li data-type="{{beer.brand}}" class="brand">Brand: {{beer.brand}}</li>
   {{else}}
     <li>No brand available</li>
   {{/if}}
 
   {{#if beer.style}}
-    <li data-type="{{beer.style}}">Style: {{beer.style}}</li>
+    <li data-type="{{beer.style}}" class="style">Style: {{beer.style}}</li>
   {{else}}
     <li>No style available.</li>
   {{/if}}
 
   {{#if beer.alc}}
-    <li data-type="{{beer.alc}}">Alc Content: {{beer.alc}}</li>
+    <li data-type="{{beer.alc}}" class="alc">Alc Content: {{beer.alc}}</li>
   {{else}}
     <li>No alc content available.</li>
   {{/if}}
 
   {{#if beer.price}}
-    <li data-type="{{beer.price}}">Price: {{beer.price}}</li>
+    <li data-type="{{beer.price}}" class="price">Price: {{beer.price}}</li>
   {{else}}
     <li>No price available.</li>
   {{/if}}

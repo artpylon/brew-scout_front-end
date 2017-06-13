@@ -126,16 +126,29 @@ const updateBeerSuccess = (data) => {
 const updateBeerFailure = (error) => {
 }
 
+const populateUpdateForm = () => {
+  $('.name').val(store.beerName)
+  $('.brand').val(store.beerBrand)
+  $('.style').val(store.beerStyle)
+  $('.alc').val(store.beerAlc)
+  $('.price').val(store.beerPrice)
+}
+
 const openBeerForm = function (event) {
   let updateBeerFormHtml = beerFormTemplate()
   $(event.target).after(updateBeerFormHtml)
   $(event.target).html('Cancel')
   $(event.target).addClass('cancelUpdate')
+  $(event.target).removeClass('openBeerUpdate')
+  $('.openBeerUpdate').hide()
   $('.cancelUpdate').on('click', reloadBeerList)
   store.beerId = $(event.target).closest('button').attr('data-id')
-  store.beerName = $(event.target).closest('h3').attr('data-type')
-  console.log(store.beerId)
-  console.log(store.beerName)
+  store.beerName = $(event.target).siblings('h3').data('type')
+  store.beerBrand = $(event.target).siblings('ul').children().first().data('type')
+  store.beerStyle = $(event.target).siblings('ul').children().slice(1).data('type')
+  store.beerAlc = $(event.target).siblings('ul').children().slice(2).data('type')
+  store.beerPrice = $(event.target).siblings('ul').children().slice(3).data('type')
+  populateUpdateForm()
   $('#updateBeer').on('submit', onUpdateBeer)
 }
 
