@@ -110,7 +110,6 @@ const updateBeerSuccess = (data) => {
   store.beerStyle = {}
   store.beerAlc = {}
   store.beerPrice = {}
-  console.log(store.beerName)
 }
 
 const updateBeerFailure = (error) => {
@@ -141,7 +140,6 @@ const openBeerForm = function (event) {
   store.beerStyle = $(event.target).prevAll('ul:first').children().slice(1).data('type')
   store.beerAlc = $(event.target).prevAll('ul:first').children().slice(2).data('type')
   store.beerPrice = $(event.target).prevAll('ul:first').children().slice(3).data('type')
-  console.log(store.beerBrand)
   populateUpdateForm()
   $('#updateBeer').on('submit', onUpdateBeer)
 }
