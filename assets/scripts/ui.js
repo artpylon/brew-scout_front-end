@@ -29,18 +29,9 @@ const signInSuccess = (data) => {
   $('.create-account-dp').addClass('hidden')
   $('.login-dp').addClass('hidden')
   $('.change-password-dp-nav').show()
-  // $('.change-password-dp-nav').removeClass('hidden')
   $('.log-out').show()
-  // $('.log-out').removeClass('hidden')
   $('#myCarousel').addClass('hidden')
   $('.three-across').addClass('hidden')
-  // toggle
-  // $('.create-account-dp').toggle()
-  // $('.login-dp').toggle()
-  // $('.change-password-dp-nav').toggle()
-  // $('.log-out').toggle()
-  // $('#myCarousel').toggle()
-  // $('.three-across').toggle()
   reloadBeerList()
 }
 
@@ -70,20 +61,13 @@ const signOutSuccess = (data) => {
   $('.beerList').empty()
 // add removeClass
   $('.change-password-dp-nav').hide()
-  // $('.change-password-dp-nav').addClass('hidden')
   $('.log-out').hide()
-  // $('.log-out').addClass('hidden')
   $('.create-account-dp').removeClass('hidden')
   $('.login-dp').removeClass('hidden')
   $('#myCarousel').removeClass('hidden')
   $('.three-across').removeClass('hidden')
-  //toggle
-  // $('.change-password-dp-nav').toggle()
-  // $('.log-out').toggle()
-  // $('.create-account-dp').toggle()
-  // $('.login-dp').toggle()
-  // $('#myCarousel').toggle()
-  // $('.three-across').toggle()
+  $('.beer-msg').text('')
+
 }
 
 const signOutFailure = (error) => {
@@ -121,6 +105,12 @@ const updateBeerSuccess = (data) => {
     this.reset()
   })
   reloadBeerList()
+  store.beerName = {}
+  store.beerBrand = {}
+  store.beerStyle = {}
+  store.beerAlc = {}
+  store.beerPrice = {}
+  console.log(store.beerName)
 }
 
 const updateBeerFailure = (error) => {
@@ -136,6 +126,9 @@ const populateUpdateForm = () => {
 
 const openBeerForm = function (event) {
   let updateBeerFormHtml = beerFormTemplate()
+  $('#updateBeer').each(function () {
+    this.reset()
+  })
   $(event.target).after(updateBeerFormHtml)
   $(event.target).html('Cancel')
   $(event.target).addClass('cancelUpdate')
@@ -143,11 +136,12 @@ const openBeerForm = function (event) {
   $('.openBeerUpdate').hide()
   $('.cancelUpdate').on('click', reloadBeerList)
   store.beerId = $(event.target).closest('button').attr('data-id')
-  store.beerName = $(event.target).siblings('h3').data('type')
-  store.beerBrand = $(event.target).siblings('ul').children().first().data('type')
-  store.beerStyle = $(event.target).siblings('ul').children().slice(1).data('type')
-  store.beerAlc = $(event.target).siblings('ul').children().slice(2).data('type')
-  store.beerPrice = $(event.target).siblings('ul').children().slice(3).data('type')
+  store.beerName = $(event.target).prevAll('h3:first').data('type')
+  store.beerBrand = $(event.target).prevAll('ul:first').children().first().data('type')
+  store.beerStyle = $(event.target).prevAll('ul:first').children().slice(1).data('type')
+  store.beerAlc = $(event.target).prevAll('ul:first').children().slice(2).data('type')
+  store.beerPrice = $(event.target).prevAll('ul:first').children().slice(3).data('type')
+  console.log(store.beerBrand)
   populateUpdateForm()
   $('#updateBeer').on('submit', onUpdateBeer)
 }

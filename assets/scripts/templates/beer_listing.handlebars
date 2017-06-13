@@ -1,7 +1,7 @@
 
 {{#each beers as |beer|}}
 <h3 data-type="{{beer.name}}">{{beer.name}}</h3>
-<ul class="beerItem" data-id="{{beer.id}}">
+<ul class="beerItem {{beer.id}}" data-id="{{beer.id}}">
   {{#if beer.brand}}
     <li data-type="{{beer.brand}}" class="brand">Brand: {{beer.brand}}</li>
   {{else}}
