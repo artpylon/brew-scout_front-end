@@ -12,6 +12,10 @@ const getFormFields = require(`../../lib/get-form-fields`)
 const signUpSuccess = () => {
   $('.errormsg').hide()
   $('.successmsg').text('Account created. Please log in.')
+  // let data = store.credentials
+  // api.signIn()
+  //   .then(ui.signInSuccess)
+  //   .catch(ui.signInFailure)
 }
 
 const signUpFailure = (error) => {
