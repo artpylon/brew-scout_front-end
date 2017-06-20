@@ -56,10 +56,18 @@ const onAddBeer = function (event) {
     .catch(ui.addBeerFailure)
 }
 
+const onUpdateBeer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateBeer(data)
+    .then(ui.updateBeerSuccess)
+    .catch(ui.updateBeerFailure)
+}
+
 const onDeleteBeer = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.onDeleteBeer(data)
+  api.deleteBeer(data)
     .then(ui.deleteBeerSuccess)
     .catch(ui.deleteBeerFailure)
 }
@@ -72,6 +80,8 @@ const addHandlers = () => {
   $('.signout-button').on('click', onSignOut)
   $('#changepwbutton').on('click', showChangePassword)
   $('#addBeer').on('submit', onAddBeer)
+  $('#deleteBeer').on('click', onDeleteBeer)
+  $('#updateBeer').on('submit', onUpdateBeer)
   // $('.openCreateAccount').on('click', ui.openCreateAccountForm)
   // $('.openLogin').on('click', ui.openLogin)
 }

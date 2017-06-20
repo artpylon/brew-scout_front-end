@@ -224,51 +224,6 @@
     </div>
   </div><br>
 
-  <!-- OLD Add Beer Form -->
-  <!-- <form id="addBeer" class="form-inline">
-
-    <legend>Add a Beer</legend>
-
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Brand</label>
-      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Style</label>
-      <input type="text" name="[beer][style]" placeholder="Style" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Alc</label>
-      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control" min="1">
-    </div>
-
-    <div class="form-group">
-      <label>Price</label>
-      <input type="number" name="[beer][price]" placeholder="Price" class="form-control" min="1">
-    </div>
-
-    <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
-
-  </form> -->
-
-
-  <!-- OLD Beers List -->
-  <!-- <div class="beer-list-div">
-    <legend class="beerListTitle">Your Personal Beer List</legend>
-    <div>
-      <p class="beer-msg"></p>
-    </div>
-    <section class="beerList">
-    </section>
-  </div> -->
-
   <!-- NEW Beers List -->
   <div class="container beer-list-div">
       <div class="row">
@@ -338,9 +293,7 @@
   </div></div></div>
 
 <!-- NEW Add Beer Form-->
-    <!-- <a href="#" data-toggle="modal" data-target="#addBeer">Login</a> -->
 
-    <!-- <div class="modal fade" id="addBeer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"> -->
     <!-- Modal -->
       <div id="addBeer" class="modal fade" role="dialog">
         	  <div class="modal-dialog">
@@ -356,29 +309,29 @@
 
                     <div class="form-group">
                       <label>Name</label>
-                      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control">
+                      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control name-add">
                     </div>
 
                     <div class="form-group">
                       <label>Brand</label>
-                      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control">
+                      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control brand-add">
                     </div>
 
                     <div class="form-group">
                       <label>Style</label>
-                      <input type="text" name="[beer][style]" placeholder="Style" class="form-control">
+                      <input type="text" name="[beer][style]" placeholder="Style" class="form-control style-add">
                     </div>
 
                     <div class="form-group">
                       <label>Alc</label>
-                      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control" min="1">
+                      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control alc-add" min="1">
                     </div>
 
                     <div class="form-group">
                       <label>Price</label>
-                      <input type="number" name="[beer][price]" placeholder="Price" class="form-control" min="1">
+                      <input type="number" name="[beer][price]" placeholder="Price" class="form-control price-add" min="1">
                     </div>
-
+                    <p class="errormsg"></p>
                     <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
@@ -391,7 +344,7 @@
 
   <!-- NEW Update Beer Form-->
   <!-- Modal -->
-    <div id="updateBeer" class="modal fade" role="dialog">
+    <div id="updateBeerModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
   <!-- Modal Content-->
           <div class="col-sm-2"></div>
@@ -427,7 +380,7 @@
                     <label>Price</label>
                     <input type="number" name="[beer][price]" placeholder="Price" class="form-control price" min="1">
                   </div>
-
+                  <p class="errormsg"></p>
                   <input type="submit" class="btn btn-default button" name="submit" value="Update Beer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
@@ -454,7 +407,7 @@
                     <p></p>
                     <p>Are you sure you want to delete this beer?</p>
                   </div>
-
+                  <p class="errormsg"></p>
                   <button id="deleteBeer" type="button" class="btn btn-default button">Delete Beer</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
