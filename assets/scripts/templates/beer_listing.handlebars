@@ -1,11 +1,11 @@
 
 {{#each beers as |beer|}}
 <tr>
-  <td class="col-xs-2" align="center">
-    <a class="btn btn-default openBeerUpdate" data-id="{{beer.id}}"><em class="fa fa-pencil"></em></a>
-    <a class="btn btn-danger deleteBeer" data-id="{{beer.id}}"><em class="fa fa-trash"></em></a>
+  <td class="col-xs-2" align="center" data-id="{{beer.id}}">
+    <a class="btn btn-default openBeerUpdate" data-id="{{beer.id}}" data-toggle="modal" data-target="#updateBeer"><em class="fa fa-pencil"></em></a>
+    <a class="btn btn-danger openDeleteBeerModal" data-id="{{beer.id}}" data-toggle="modal" data-target="#deleteBeerModal"><em class="fa fa-trash"></em></a>
   </td>
-  <td class="col-xs-2" data-type="{{beer.name}}">{{beer.name}}</td>
+  <td class="col-xs-2" data-type="{{beer.name}}" data-id="{{beer.id}}">{{beer.name}}</td>
   {{#if beer.brand}}
     <td class="col-xs-2 brand" data-type="{{beer.brand}}">{{beer.brand}}</td>
   {{else}}

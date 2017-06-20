@@ -224,8 +224,8 @@
     </div>
   </div><br>
 
-  <!-- Add Beer Form -->
-  <form id="addBeer" class="form-inline">
+  <!-- OLD Add Beer Form -->
+  <!-- <form id="addBeer" class="form-inline">
 
     <legend>Add a Beer</legend>
 
@@ -256,7 +256,7 @@
 
     <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
 
-  </form>
+  </form> -->
 
 
   <!-- OLD Beers List -->
@@ -282,7 +282,7 @@
                       <h3 class="panel-title">My Favorite Beers</h3>
                     </div>
                     <div class="col col-xs-6 text-right">
-                      <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+                      <button type="button" class="btn btn-sm btn-primary btn-create open-add-beer" data-toggle="modal" data-target="#addBeer">Add Beer</button>
                     </div>
                   </div>
                 </div>
@@ -337,6 +337,131 @@
 
   </div></div></div>
 
+<!-- NEW Add Beer Form-->
+    <!-- <a href="#" data-toggle="modal" data-target="#addBeer">Login</a> -->
+
+    <!-- <div class="modal fade" id="addBeer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"> -->
+    <!-- Modal -->
+      <div id="addBeer" class="modal fade" role="dialog">
+        	  <div class="modal-dialog">
+    <!-- Modal Content-->
+            <div class="col-sm-2"></div>
+    				<div class="modal-content col-sm-8">
+
+                <form id="addBeer" class="">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Add a Beer</h3>
+                  </div>
+
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Brand</label>
+                      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Style</label>
+                      <input type="text" name="[beer][style]" placeholder="Style" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Alc</label>
+                      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control" min="1">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Price</label>
+                      <input type="number" name="[beer][price]" placeholder="Price" class="form-control" min="1">
+                    </div>
+
+                    <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                  </form>
+
+    				</div>
+            <div class="col-sm-2"></div>
+    			</div>
+    		  </div>
+
+  <!-- NEW Update Beer Form-->
+  <!-- Modal -->
+    <div id="updateBeer" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+  <!-- Modal Content-->
+          <div class="col-sm-2"></div>
+          <div class="modal-content col-sm-8">
+
+              <form id="updateBeer" class="">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="modal-title">Update a Beer</h3>
+                </div>
+
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control name">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Brand</label>
+                    <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control brand">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Style</label>
+                    <input type="text" name="[beer][style]" placeholder="Style" class="form-control style">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Alc</label>
+                    <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control alc" min="1">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" name="[beer][price]" placeholder="Price" class="form-control price" min="1">
+                  </div>
+
+                  <input type="submit" class="btn btn-default button" name="submit" value="Update Beer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </form>
+
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+        </div>
+
+<!-- NEW Delete Beer Form-->
+        <!-- Modal -->
+          <div id="deleteBeerModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+        <!-- Modal Content-->
+                <div class="col-sm-2"></div>
+                <div class="modal-content col-sm-8">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Delete a Beer</h3>
+                  </div>
+
+                  <div class="form-group confirmDeleteMsg">
+                    <p></p>
+                    <p>Are you sure you want to delete this beer?</p>
+                  </div>
+
+                  <button id="deleteBeer" type="button" class="btn btn-default button">Delete Beer</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+                <div class="col-sm-2"></div>
+              </div>
+              </div>
 
   <footer class="container-fluid ">
     <p class="footer-text">Brew Scout 2017 ©</p>

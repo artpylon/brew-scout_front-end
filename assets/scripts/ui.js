@@ -23,7 +23,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   $('.errormsg').hide()
   $('.yourBeers').show()
-  $('#addBeer').show()
+  // $('#addBeer').show()
   $('.beer-list-div').show()
   // new
   $('.create-account-dp').addClass('hidden')
@@ -56,7 +56,7 @@ const signOutSuccess = (data) => {
   $('.errormsg').hide()
   $('.changepwmsg').hide()
   $('.yourBeers').hide()
-  $('#addBeer').hide()
+  // $('#addBeer').hide()
   $('.beer-list-div').hide()
   $('.beerList').empty()
 // add removeClass
@@ -95,14 +95,15 @@ const onUpdateBeer = function (event) {
 }
 
 const updateBeerSuccess = (data) => {
+  $('#updateBeer').modal('toggle')
   $('.errormsg').hide()
   $('.changepwmsg').hide()
-  $('#updateBeer').hide()
+  // $('#updateBeer').hide()
   $('.beerList').empty()
   $('.beer-msg').empty()
-  $('#updateBeer').each(function () {
-    this.reset()
-  })
+  // $('#updateBeer').each(function () {
+  //   this.reset()
+  // })
   reloadBeerList()
   store.beerName = {}
   store.beerBrand = {}
@@ -123,22 +124,22 @@ const populateUpdateForm = () => {
 }
 
 const openBeerForm = function (event) {
-  let updateBeerFormHtml = beerFormTemplate()
-  $('#updateBeer').each(function () {
-    this.reset()
-  })
-  $(event.target).after(updateBeerFormHtml)
-  $(event.target).html('Cancel')
-  $(event.target).addClass('cancelUpdate')
-  $(event.target).removeClass('openBeerUpdate')
-  $('.openBeerUpdate').hide()
-  $('.cancelUpdate').on('click', reloadBeerList)
-  store.beerId = $(event.target).closest('button').attr('data-id')
-  store.beerName = $(event.target).prevAll('h3:first').data('type')
-  store.beerBrand = $(event.target).prevAll('ul:first').children().first().data('type')
-  store.beerStyle = $(event.target).prevAll('ul:first').children().slice(1).data('type')
-  store.beerAlc = $(event.target).prevAll('ul:first').children().slice(2).data('type')
-  store.beerPrice = $(event.target).prevAll('ul:first').children().slice(3).data('type')
+  // let updateBeerFormHtml = beerFormTemplate()
+  // $('#updateBeer').each(function () {
+  //   this.reset()
+  // })
+  // $(event.target).after(updateBeerFormHtml)
+  // $(event.target).html('Cancel')
+  // $(event.target).addClass('cancelUpdate')
+  // $(event.target).removeClass('openBeerUpdate')
+  // $('.openBeerUpdate').hide()
+  // $('.cancelUpdate').on('click', reloadBeerList)
+  store.beerId = $(event.target).closest('td').data('id')
+  store.beerName = $(event.target).closest('td').next('td').data('type')
+  store.beerBrand = $(event.target).closest('td').siblings().slice(1).data('type')
+  store.beerStyle = $(event.target).closest('td').siblings().slice(2).data('type')
+  store.beerAlc = $(event.target).closest('td').siblings().slice(3).data('type')
+  store.beerPrice = $(event.target).closest('td').siblings().slice(4).data('type')
   populateUpdateForm()
   $('#updateBeer').on('submit', onUpdateBeer)
 }
@@ -152,16 +153,17 @@ const onDeleteBeer = function (event) {
 }
 
 const confirmBeerDelete = function (event) {
-  let confirmBeerDeleteHtml = beerDeleteTemplate()
-  $('#updateBeer').hide()
-  $(event.target).html('Cancel')
-  $(event.target).addClass('cancelDelete')
-  $(event.target).removeClass('deleteBeer')
-  $('.deleteBeer').hide()
-  $('.cancelDelete').on('click', reloadBeerList)
-  $(event.target).after(confirmBeerDeleteHtml)
-  store.beerId = $(event.target).closest('button').attr('data-id')
-  $('.deleteBeer').hide()
+  // let confirmBeerDeleteHtml = beerDeleteTemplate()
+  // // $('#updateBeer').hide()
+  // $(event.target).html('Cancel')
+  // $(event.target).addClass('cancelDelete')
+  // $(event.target).removeClass('deleteBeer')
+  // $('.deleteBeer').hide()
+  // $('.cancelDelete').on('click', reloadBeerList)
+  // $(event.target).after(confirmBeerDeleteHtml)
+  store.beerId = $(event.target).closest('td').data('id')
+  console.log(store.beerId)
+  // $('.deleteBeer').hide()
   $('#deleteBeer').on('click', onDeleteBeer)
 }
 
@@ -170,7 +172,7 @@ const beerIndexSuccess = (response) => {
   let showBeersHtml = showBeersTemplate({ beers: response.beers })
   $('.beerList').append(showBeersHtml)
   $('.openBeerUpdate').on('click', openBeerForm)
-  $('.deleteBeer').on('click', confirmBeerDelete)
+  $('.openDeleteBeerModal').on('click', confirmBeerDelete)
 }
 
 const beerIndexFailure = (error) => {
@@ -178,13 +180,14 @@ const beerIndexFailure = (error) => {
 }
 
 const addBeerSuccess = (data) => {
+  $('#addBeer').modal('toggle')
   $('.errormsg').hide()
   $('.changepwmsg').hide()
   $('.beerList').empty()
   $('.beer-msg').empty()
-  $('#addBeer').each(function () {
-    this.reset()
-  })
+  // $('#addBeer').each(function () {
+  //   this.reset()
+  // })
   reloadBeerList()
 }
 const addBeerFailure = (error) => {
@@ -192,9 +195,10 @@ const addBeerFailure = (error) => {
 }
 
 const deleteBeerSuccess = (data) => {
+  $('#deleteBeerModal').modal('toggle')
   $('.errormsg').hide()
   $('.changepwmsg').hide()
-  $('#updateBeer').hide()
+  // $('#updateBeer').hide()
   $('.confirmBeerDelete').hide()
   $('.beerList').empty()
   $('.beer-msg').text('Beer has been deleted')

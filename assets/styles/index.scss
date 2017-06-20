@@ -240,11 +240,11 @@ input, select, textarea {
 .beerItem {
   font-size: 14px;
 }
-#addBeer {
-  display: none;
-  padding-left: 30px;
-  padding-right: 30px;
-}
+// #addBeer {
+//   display: none;
+//   padding-left: 30px;
+//   padding-right: 30px;
+// }
 
 .beer-list-div {
   display: none;
@@ -310,4 +310,13 @@ used to vertically center elements, may need modification if you're not using de
 
 .panel-table .panel-body .table-bordered > tbody > tr > td{
   line-height: 34px;
+}
+
+// Modals
+.modal-title {
+  color: $background-color;
+}
+
+.confirmDeleteMsg {
+  color: black;
 }
