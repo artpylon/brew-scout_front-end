@@ -24,7 +24,7 @@ const signInSuccess = (data) => {
   $('.errormsg').hide()
   $('.yourBeers').show()
   $('#addBeer').show()
-  $('.beerListTitle').show()
+  $('.beer-list-div').show()
   // new
   $('.create-account-dp').addClass('hidden')
   $('.login-dp').addClass('hidden')
@@ -57,7 +57,7 @@ const signOutSuccess = (data) => {
   $('.changepwmsg').hide()
   $('.yourBeers').hide()
   $('#addBeer').hide()
-  $('.beerListTitle').hide()
+  $('.beer-list-div').hide()
   $('.beerList').empty()
 // add removeClass
   $('.change-password-dp-nav').hide()
@@ -67,7 +67,6 @@ const signOutSuccess = (data) => {
   $('#myCarousel').removeClass('hidden')
   $('.three-across').removeClass('hidden')
   $('.beer-msg').text('')
-
 }
 
 const signOutFailure = (error) => {
