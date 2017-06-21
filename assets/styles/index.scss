@@ -248,6 +248,7 @@ input, select, textarea {
 
 .beer-list-div {
   display: none;
+  min-height: 550px;
 }
 
 .deleteBeer {
@@ -319,4 +320,7 @@ used to vertically center elements, may need modification if you're not using de
 
 .confirmDeleteMsg {
   color: black;
+}
+.three-across {
+  min-height: 385px;
 }

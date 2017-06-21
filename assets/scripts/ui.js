@@ -12,6 +12,7 @@ const getFormFields = require(`../../lib/get-form-fields`)
 const signUpSuccess = () => {
   $('.errormsg').hide()
   $('.successmsg').text('Account created. Please log in.')
+  $('.successmsg').show()
   // let data = store.credentials
   // api.signIn()
   //   .then(ui.signInSuccess)
@@ -19,12 +20,15 @@ const signUpSuccess = () => {
 }
 
 const signUpFailure = (error) => {
+  $('.successmsg').hide()
   $('.errormsg').hide()
   $('.errormsg').text('Sign up failed. Please check your email and passwords.')
   $('.err-create').show()
 }
 
 const signInSuccess = (data) => {
+  $('.successmsg').hide()
+  $('.changepwmsg').hide()
   $('.errormsg').hide()
   $('.yourBeers').show()
   $('.beer-list-div').show()
