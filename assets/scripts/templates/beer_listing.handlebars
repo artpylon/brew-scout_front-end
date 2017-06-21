@@ -1,31 +1,33 @@
 
 {{#each beers as |beer|}}
-<h3 data-type="{{beer.name}}">{{beer.name}}</h3>
-<ul class="beerItem {{beer.id}}" data-id="{{beer.id}}">
+<tr>
+  <td class="col-xs-2" align="center" data-id="{{beer.id}}">
+    <a class="btn btn-default openBeerUpdate" data-id="{{beer.id}}" data-toggle="modal" data-target="#updateBeerModal"><em class="fa fa-pencil"></em></a>
+    <a class="btn btn-danger openDeleteBeerModal" data-id="{{beer.id}}" data-toggle="modal" data-target="#deleteBeerModal"><em class="fa fa-trash"></em></a>
+  </td>
+  <td class="col-xs-2" data-type="{{beer.name}}" data-id="{{beer.id}}">{{beer.name}}</td>
   {{#if beer.brand}}
-    <li data-type="{{beer.brand}}" class="brand">Brand: {{beer.brand}}</li>
+    <td class="col-xs-2 brand" data-type="{{beer.brand}}">{{beer.brand}}</td>
   {{else}}
-    <li>No brand available</li>
+    <td></td>
   {{/if}}
 
   {{#if beer.style}}
-    <li data-type="{{beer.style}}" class="style">Style: {{beer.style}}</li>
+    <td class="col-xs-2 style" data-type="{{beer.style}}">{{beer.style}}</td>
   {{else}}
-    <li>No style available.</li>
+    <td></td>
   {{/if}}
 
   {{#if beer.alc}}
-    <li data-type="{{beer.alc}}" class="alc">Alc Content: {{beer.alc}}</li>
+    <td class="col-xs-1 alc" data-type="{{beer.alc}}">{{beer.alc}}</td>
   {{else}}
-    <li>No alc content available.</li>
+    <td></td>
   {{/if}}
 
   {{#if beer.price}}
-    <li data-type="{{beer.price}}" class="price">Price: {{beer.price}}</li>
+    <td class="col-xs-1 price" data-type="{{beer.price}}">{{beer.price}}</td>
   {{else}}
-    <li>No price available.</li>
+    <td></td>
   {{/if}}
-</ul>
-  <button class="deleteBeer btn btn-default button" data-id="{{beer.id}}">Delete</button>
-  <button class="openBeerUpdate btn btn-default button" data-id="{{beer.id}}">Update</button>
+</tr>
 {{/each}}

@@ -10,7 +10,7 @@
      <!-- Do not add `script` tags unless you know what you are doing -->
      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     </head>
 <body class="container-fluid">
   <!-- <div class="fill"> -->
@@ -224,146 +224,202 @@
     </div>
   </div><br>
 
-  <!-- Add Beer Form -->
-  <form id="addBeer" class="form-inline">
+  <!-- NEW Beers List -->
+  <div class="container beer-list-div">
+      <div class="row">
 
-    <legend>Add a Beer</legend>
+          <div class="col-md-10 col-md-offset-1">
 
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control">
-    </div>
+              <div class="panel panel-default panel-table">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col col-xs-6">
+                      <h3 class="panel-title">My Favorite Beers</h3>
+                    </div>
+                    <div class="col col-xs-6 text-right">
+                      <button type="button" class="btn btn-sm btn-primary btn-create open-add-beer" data-toggle="modal" data-target="#addBeer">Add Beer</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <table class="table table-striped table-bordered table-list">
+                    <thead>
+                      <tr>
+                          <th class="col-xs-2"><em class="fa fa-cog"></em></th>
+                          <th class="col-xs-2">Name</th>
+                          <th class="col-xs-2">Brand</th>
+                          <th class="col-xs-2">Style</th>
+                          <th class="col-xs-1">Alc</th>
+                          <th class="col-xs-1">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody class="beerList">
+                            <!-- <tr>
+                              <td align="center">
+                                <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
+                                <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                              </td>
+                              <td class="hidden-xs">1</td>
+                              <td>John Doe</td>
+                              <td>johndoe@example.com</td>
+                            </tr> -->
+                          </tbody>
+                  </table>
 
-    <div class="form-group">
-      <label>Brand</label>
-      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control">
-    </div>
+                </div>
 
-    <div class="form-group">
-      <label>Style</label>
-      <input type="text" name="[beer][style]" placeholder="Style" class="form-control">
-    </div>
+  <!-- List Pagination -->
+                <!-- <div class="panel-footer">
+                  <div class="row">
+                    <div class="col col-xs-4">Page 1 of 5
+                    </div>
+                    <div class="col col-xs-8">
+                      <ul class="pagination hidden-xs pull-right">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                      </ul>
+                      <ul class="pagination visible-xs pull-right">
+                          <li><a href="#">«</a></li>
+                          <li><a href="#">»</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
 
-    <div class="form-group">
-      <label>Alc</label>
-      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control" min="1">
-    </div>
+  </div></div></div>
 
-    <div class="form-group">
-      <label>Price</label>
-      <input type="number" name="[beer][price]" placeholder="Price" class="form-control" min="1">
-    </div>
+<!-- NEW Add Beer Form-->
 
-    <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
+    <!-- Modal -->
+      <div id="addBeer" class="modal fade" role="dialog">
+        	  <div class="modal-dialog">
+    <!-- Modal Content-->
+            <div class="col-sm-2"></div>
+    				<div class="modal-content col-sm-8">
 
-  </form>
+                <form id="addBeer" class="">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Add a Beer</h3>
+                  </div>
 
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control name-add">
+                    </div>
 
-  <!-- Beers List -->
-  <div class="beer-list-div">
-    <legend class="beerListTitle">Your Personal Beer List</legend>
-    <div>
-      <p class="beer-msg"></p>
-    </div>
-    <section class="beerList">
-    </section>
-  </div>
+                    <div class="form-group">
+                      <label>Brand</label>
+                      <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control brand-add">
+                    </div>
 
+                    <div class="form-group">
+                      <label>Style</label>
+                      <input type="text" name="[beer][style]" placeholder="Style" class="form-control style-add">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Alc</label>
+                      <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control alc-add" min="1">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Price</label>
+                      <input type="number" name="[beer][price]" placeholder="Price" class="form-control price-add" min="1">
+                    </div>
+                    <p class="errormsg"></p>
+                    <input type="submit" class="btn btn-default button" name="submit" value="Add Beer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                  </form>
+
+    				</div>
+            <div class="col-sm-2"></div>
+    			</div>
+    		  </div>
+
+  <!-- NEW Update Beer Form-->
+  <!-- Modal -->
+    <div id="updateBeerModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+  <!-- Modal Content-->
+          <div class="col-sm-2"></div>
+          <div class="modal-content col-sm-8">
+
+              <form id="updateBeer" class="">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="modal-title">Update a Beer</h3>
+                </div>
+
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="[beer][name]" placeholder="Name" required="true" class="form-control name">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Brand</label>
+                    <input type="text" name="[beer][brand]" placeholder="Brand" class="form-control brand">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Style</label>
+                    <input type="text" name="[beer][style]" placeholder="Style" class="form-control style">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Alc</label>
+                    <input type="number" name="[beer][alc]" placeholder="Alc Content" class="form-control alc" min="1">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" name="[beer][price]" placeholder="Price" class="form-control price" min="1">
+                  </div>
+                  <p class="errormsg"></p>
+                  <input type="submit" class="btn btn-default button" name="submit" value="Update Beer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </form>
+
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+        </div>
+
+<!-- NEW Delete Beer Form-->
+        <!-- Modal -->
+          <div id="deleteBeerModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+        <!-- Modal Content-->
+                <div class="col-sm-2"></div>
+                <div class="modal-content col-sm-8">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Delete a Beer</h3>
+                  </div>
+
+                  <div class="form-group confirmDeleteMsg">
+                    <p></p>
+                    <p>Are you sure you want to delete this beer?</p>
+                  </div>
+                  <p class="errormsg"></p>
+                  <button id="deleteBeer" type="button" class="btn btn-default button">Delete Beer</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+                <div class="col-sm-2"></div>
+              </div>
+              </div>
 
   <footer class="container-fluid ">
     <p class="footer-text">Brew Scout 2017 ©</p>
   </footer>
 
-
-<!-- OLD STUFF -->
-    <!-- <body class="container-fluid">
-      <h1>Brew Scout</h1>
-
-<!-- Sign Up Form -->
-    <!-- <section class="authforms">
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up!</legend>
-
-          <label>Email</label>
-          <input type="text" name="[credentials][email]" placeholder="Email Address">
-
-          <label>Password</label>
-          <input type="password" name="[credentials][password]" placeholder="Password">
-
-          <label>Confirm Password</label>
-          <input type="password" name="[credentials][password_confirmation]" placeholder="Confirm Password">
-
-          <input type="submit" class="button" name="submit" value="Sign up!">
-        </fieldset>
-      </form> -->
-
-<!-- Sign In Form -->
-      <!-- <form id="sign-in">
-        <fieldset>
-          <legend>Sign in!</legend>
-
-          <label>Email</label>
-          <input type="text" name="[credentials][email]" placeholder="Email Address">
-
-          <label>Password</label>
-          <input type="password" name="[credentials][password]" placeholder="Password">
-
-          <input class="button" type="submit" name="submit" value="Sign in!">
-        </fieldset>
-      </form> -->
-
-<!-- Change Password Form -->
-      <!-- <button id="changepwbutton">Change Password</button>
-
-      <form id="change-password">
-        <fieldset>
-          <legend>Change your password!</legend>
-
-          <label>Old password</label>
-          <input type="password" name="[passwords][old]" placeholder="Old password">
-
-          <label>New password</label>
-          <input type="password" name="[passwords][new]" placeholder="New password">
-
-          <input class="button" type="submit" name="submit" value="Change password!">
-        </fieldset>
-      </form>
-
-      <button class="signout-button button">Sign Out</button>
-    </section>
-    <p class="errormsg"></p>
-    <p class="changepwmsg">Password changed.</p> -->
-
-<!-- Add Beer Form -->
-<!-- <form id="addBeer">
-  <fieldset>
-    <legend>Add a Beer</legend>
-
-    <label>Name</label>
-    <input type="text" name="[beer][name]" placeholder="Name" required="true">
-
-    <label>Brand</label>
-    <input type="text" name="[beer][brand]" placeholder="Brand">
-
-    <label>Style</label>
-    <input type="text" name="[beer][style]" placeholder="Style">
-
-    <label>Alc Content</label>
-    <input type="number" name="[beer][alc]" placeholder="Alc Content">
-
-    <label>Price</label>
-    <input type="number" name="[beer][price]" placeholder="Price">
-
-    <input type="submit" class="button" name="submit" value="Add Beer">
-  </fieldset>
-</form>
-
-<!-- Beers List -->
-<!-- <legend class="beerListTitle">Your Personal Beer List</legend>
-<section class="beerList">
-</section> -->
-<!-- </div> -->
 </body>
 
 
