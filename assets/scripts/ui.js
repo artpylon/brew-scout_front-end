@@ -21,6 +21,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
+  $('.successmsg').text('')
   $('.errormsg').hide()
   $('.yourBeers').show()
   $('#addBeer').show()
