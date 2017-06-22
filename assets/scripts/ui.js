@@ -10,6 +10,7 @@ const getFormFields = require(`../../lib/get-form-fields`)
 // Authentication
 
 const signUpSuccess = () => {
+  $('#create-account').trigger('reset')
   $('.errormsg').hide()
   $('.successmsg').text('Account created. Please log in.')
   $('.successmsg').show()
@@ -27,6 +28,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
+  $('#sign-in').trigger('reset')
   $('.successmsg').hide()
   $('.changepwmsg').hide()
   $('.errormsg').hide()
@@ -49,6 +51,7 @@ const signInFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
+  $('#change-password').trigger('reset')
   $('.errormsg').hide()
   $('.changepwmsg').show()
   $('#changepwbutton').show()
